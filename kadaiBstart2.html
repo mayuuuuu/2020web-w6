@@ -21,6 +21,7 @@
     .daikichi {
       background: pink;
       border-radius: 50%;
+      transform: scale(1.2);
       transform: rotate(360deg);
     }
     .chukichi {
@@ -31,8 +32,8 @@
     .shokichi {
       background: yellow;
       border-radius: 50%;
-      transform: scale(0.9);
       transform: rotate(360deg);
+      transform: scale(0.9);
     }
     .kyo {
       background: blue;
@@ -46,22 +47,25 @@
     'use strict';
 
     const num = 10;
+    const shokichi1 = Math.floor(Math.random() * num); // 0 - 4
+    const shokichi2 = Math.floor(Math.random() * num); // 0 - 4
+    const shokichi3 = Math.floor(Math.random() * num); // 0 - 4
+    const chukichi1 = Math.floor(Math.random() * num); // 0 - 4
+    const chukichi2 = Math.floor(Math.random() * num); // 0 - 4
     const daikichi = Math.floor(Math.random() * num); // 0 - 4
-    const shokichi = Math.floor(Math.random() * num); // 0 - 4
-    const chukichi = Math.floor(Math.random() * num); // 0 - 4
 
     for (let i = 0; i < num; i++) {
       const div = document.createElement('div');
       div.classList.add('box');
       
       div.addEventListener('click', () => {
-        if (i === daikichi) {
+        if (i === daikichi ) {
           div.textContent = '大吉!';
           div.classList.add('daikichi');
-        } else if(i===chukichi){
+        } else if(i===chukichi1 ||i===chukichi2){
           div.textContent = '中吉';
           div.classList.add('chukichi');
-        } else if(i===shokichi){
+        } else if(i===shokichi1 ||i===shokichi2 ||i===shokichi3){
           div.textContent = '小吉';
           div.classList.add('shokichi');
         }else {
